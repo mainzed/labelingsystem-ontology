@@ -1,0 +1,123 @@
+@prefix ls: <http://labeling.link/docs/ls/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+
+# Ontology
+
+ls: a owl:Ontology;
+  dcterms:title "Labeling System Vocabulary"@en;
+  dcterms:created "2016-10-06"^^xsd:date;
+  dcterms:description "An RDF vocabulary for describing the basic structure and content of the Labeling System concept."@en;
+  owl:versionInfo "Aldgate Edition";
+  dcterms:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
+  dcterms:licence <http://creativecommons.org/licenses/by/4.0/>;
+  rdfs:seeAlso <http://labeling.link/docs/ls/core/>.
+
+# Classes
+
+# Main Classes
+
+ls:Agent a owl:Class, rdfs:Class;
+	rdfs:SubClassOf foaf:Agent;
+	skos:definition <http://labeling.link/docs/ls/reference#MainClasses>;
+	rdfs:label "A Labeling System Agent"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:Label a owl:Class, rdfs:Class;
+	rdfs:SubClassOf skos:Concept;
+	skos:definition <http://labeling.link/docs/ls/reference#MainClasses>;
+	rdfs:label "A Labeling System Label"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:Revision a owl:Class, rdfs:Class;
+	rdfs:SubClassOf prov:Activity;
+	skos:definition <http://labeling.link/docs/ls/reference#MainClasses>;
+	rdfs:label "A Labeling System Revision"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+	
+ls:Vocabulary a owl:Class, rdfs:Class;
+	rdfs:SubClassOf skos:ConceptScheme;
+	rdfs:SubClassOf skos:Collection;
+	skos:definition <http://labeling.link/docs/ls/reference#MainClasses>;
+	rdfs:label "A Labeling System Vocabulary"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+# Release Type Classes
+
+ls:ReleaseType a owl:Class, rdfs:Class;
+	skos:definition <http://labeling.link/docs/ls/reference#ReleaseTypeClasses>;
+	rdfs:label "release type"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:Public a owl:Class, rdfs:Class;
+	rdfs:SubClassOf ls:ReleaseType;
+	skos:definition <http://labeling.link/docs/ls/reference#ReleaseTypeClasses>;
+	rdfs:label "public item"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:Draft a owl:Class, rdfs:Class;
+	rdfs:SubClassOf ls:ReleaseType;
+	skos:definition <http://labeling.link/docs/ls/reference#ReleaseTypeClasses>;
+	rdfs:label "item in draft mode"@en;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+# Properties
+
+# describing properties
+
+ls:hasReleaseType a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#DescribingProperties>;
+	rdfs:label "has release type"@en;
+	rdfs:domain ls:Label;
+	rdfs:range ls:ReleaseType;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:thumbnail a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#DescribingProperties>;
+	rdfs:label "has a preffered skos:prefLabel"@en;
+	rdfs:domain ls:Label;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:released a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#DescribingProperties>;
+	rdfs:label "was released at"@en;
+	rdfs:domain ls:Vocabulary;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+# revision properties
+
+ls:action a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#RevisionProperties>;
+	rdfs:label "has action"@en;
+	rdfs:domain ls:Revision;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:objectType a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#RevisionProperties>;
+	rdfs:label "has object type"@en;
+	rdfs:domain ls:Revision;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:valueBefore a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#RevisionProperties>;
+	rdfs:label "had value before"@en;
+	rdfs:domain ls:Revision;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.
+
+ls:valueAfter a owl:ObjectProperty, rdf:Property;
+	skos:definition <http://labeling.link/docs/ls/reference#RevisionProperties>;
+	rdfs:label "had value after"@en;
+	rdfs:domain ls:Revision;
+	rdfs:range rdfs:Literal;
+	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.

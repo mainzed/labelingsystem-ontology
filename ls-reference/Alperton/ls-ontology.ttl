@@ -1,0 +1,95 @@
+@prefix ls-reference: <http://labeling.link/docs/ls/reference#>.
+@prefix ls: <http://labeling.link/docs/ls/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+# Ontology
+
+ls-reference: a owl:Ontology;
+	rdfs:label "Labeling System Ontology"@en;
+	dcterms:created "2016-10-05"^^xsd:date;
+	dcterms:description "A RDF ontology describing the Labeling System"@en;
+	owl:versionInfo "Alperton Edition";
+	dcterms:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
+	dcterms:licence <http://creativecommons.org/licenses/by/4.0/>;
+	rdfs:seeAlso <http://labeling.link/docs/ls/reference/>.
+
+ls:Agent a owl:Class;
+	rdfs:label "Acting Agent"@en; 			
+	owl:equivalentClass foaf:Agent;			#MENDATORY FIXED
+	dc:identifier rdfs:Literal; 			#MENDATORY FIXED [id]
+	# textual description
+	foaf:title rdfs:Literal; 			#OPTIONAL CHANGEABLE [title] (e.g. Dr., Prof.)
+	foaf:firstName rdfs:Literal; 			#MENDATORY CHANGEABLE [firstName]
+	foaf:lastName rdfs:Literal; 			#MENDATORY CHANGEABLE  [lastName]
+	dcterms:publisher rdfs:Resource; 		#MENDATORY CHANGEABLE [orcid] (ORCID)
+	dcterms:isPartOf rdfs:Resource. 		#MENDATORY CHANGEABLE [affiliation] (affiliation)
+
+ls:Vocabulary a owl:Class;
+	rdfs:label "Controlled Vocabulary"@en;		
+	owl:equivalentClass skos:ConceptScheme;		#MENDATORY FIXED
+	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
+	# creator
+	dct:creator rdfs:Resource;			#MENDATORY FIXED
+	dc:creator rdfs:Literal;			#MENDATORY FIXED [creator]
+	# textual description
+	dc:title rdfs:Literal;				#MENDATORY CHANGEABLE [title]
+	dc:description rdfs:Literal;			#MENDATORY CHANGEABLE [description]
+	dc:language rdfs:Literal;			#MENDATORY CHANGEABLE [language]
+	# metadata
+	dc:created rdfs:Literal;			#MENDATORY FIXED [created]
+	dct:license rdfs:Resource;			#MENDATORY CHANGEABLE [license]
+	# status and changes
+	dc:modified rdfs:Literal;			#OPTIONAL FIXED
+	ls:released rdfs:Literal;			#OPTIONAL FIXED [released]
+	ls:hasReleaseType ls:ReleaseType.		#MENDATORY CHANGEABLE [releaseType]
+	
+ls:Label a owl:Class;
+	rdfs:label "Labeling System Label"@en;		
+	owl:equivalentClass skos:Concept;		#MENDATORY FIXED
+	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
+	# creator
+	dct:creator rdfs:Resource;			#MENDATORY FIXED
+	dc:creator rdfs:Literal;			#MENDATORY FIXED [creator]
+	# vocabulary
+	skos:inScheme skos:ConceptScheme;		#MENDATORY FIXED [vocabID]
+	# textual description
+	ls:thumbnail rdfs:Literal;			#MENDATORY CHANGEABLE [thumbnail]
+	dc:language rdfs:Literal;			#MENDATORY CHANGEABLE [language]
+	skos:scopeNote rdfs:Literal;			#OPTIONAL CHANGEABLE [description]
+	skos:prefLabel rdfs:Literal;			#MENDATORY CHANGEABLE [translations]
+	# relations
+	skos:broader skos:Concept;			#OPTIONAL CHANGEABLE [broader]
+	skos:narrower skos:Concept;			#OPTIONAL CHANGEABLE [narrower]
+	skos:related skos:Concept;			#OPTIONAL CHANGEABLE [related]
+	skos:broadMatch skos:Concept;			#OPTIONAL CHANGEABLE [broadMatch]
+	skos:narrowMatch skos:Concept;			#OPTIONAL CHANGEABLE [narrowMatch]
+	skos:relatedMatch skos:Concept;			#OPTIONAL CHANGEABLE [relatedMatch]
+	skos:closeMatch skos:Concept;			#OPTIONAL CHANGEABLE [closeMatch]
+	skos:exactMatch skos:Concept;			#OPTIONAL CHANGEABLE [exactMatch]
+	rdfs:seeAlso rdfs:Resource;			#OPTIONAL CHANGEABLE [seeAlso]
+	# metadata
+	dc:created rdfs:Literal;			#MENDATORY FIXED [created]
+	# status and changes
+	dc:modified rdfs:Literal;			#OPTIONAL FIXED
+	skos:changeNote ls:Revision.			#OPTIONAL
+	
+ls:Revision a owl:Class;
+	rdfs:label "Labeling System Revision"@en;
+	owl:equivalentClass prov:Activity;		#MENDATORY FIXED
+	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
+	ls:action rdfs:Literal;				#MENDATORY FIXED [action]
+	ls:objectType rdfs:Literal;			#MENDATORY FIXED [objectType]
+	ls:valueBefore rdfs:Literal;			#MENDATORY FIXED [valueBefore]
+	ls:valueAfter rdfs:Literal;			#MENDATORY FIXED [valueAfter]
+	prov:startedAtTime rdfs:Literal.		#MENDATORY FIXED [date]
