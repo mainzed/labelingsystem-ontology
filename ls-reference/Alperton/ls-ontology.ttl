@@ -37,7 +37,7 @@ ls:Vocabulary a owl:Class;
 	owl:equivalentClass skos:ConceptScheme;		#MENDATORY FIXED
 	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
 	# creator
-	dct:creator rdfs:Resource;			#MENDATORY FIXED
+	dct:creator ls:Agent;				#MENDATORY FIXED
 	dc:creator rdfs:Literal;			#MENDATORY FIXED [creator]
 	# textual description
 	dc:title rdfs:Literal;				#MENDATORY CHANGEABLE [title]
