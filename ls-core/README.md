@@ -1,2 +1,3 @@
 # ls-core
-A RDF vocabulary describing Labeling System classes and properties
+
+An RDF vocabulary for describing the basic structure and content of the Labeling System.
