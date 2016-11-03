@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Labeling System Reference</title>
+
+<style type="text/css">
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100italic,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100);
+
+body {
+  padding: 2em 70px 2em 70px;
+  margin: 0;
+  /*font-family: sans-serif;*/
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  color: black;
+  background: white;
+}
+
+a:link    {color: #00c;text-decoration:underline}
+a:visited {color: #00c;text-decoration:underline}
+a:hover   {color: #00c;text-decoration:underline}
+a:active  {color: #00c;text-decoration:underline}
+
+h1, h2, h3, h4, h5, h6 { text-align: left }
+h1, h2, h3 { color: #005A9C; background: white }
+h1 { font: 170% sans-serif }
+h2 { font: 140% sans-serif }
+h3 { font: 120% sans-serif }
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+
+p {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+dt, dd { margin-top: 5px; margin-bottom: 5px }
+dt { font-weight: bold }
+
+table 
+{ 
+  width: 100%;
+  border-top: 1px solid #ccc; 
+  border-left: 1px solid #ccc; 
+  margin-bottom: 10px; 
+}
+
+table th 
+{ 
+  background: #eee; 
+}
+
+table td, table th 
+{ 
+  border-right: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc; 
+  padding: .5em; 
+  vertical-align:top;
+}
+
+
+.red {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	background-color: #f1e1e5;
+    border-radius: 4px;
+    color: #c7254e;
+    font-size: 90%;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.green {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	background-color: #C3FDB8;
+    border-radius: 4px;
+    color: green;
+    font-size: 90%;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+.grey {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	background-color: #dddddd;
+    border-radius: 4px;
+    color: #000000;
+    font-size: 90%;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<h1>Labeling System Reference</h1>
+<h2>07 September 2016 - <a href="https://en.wikipedia.org/wiki/Alperton_tube_station" target="_blank">Alperton</a> Edition</h2>
+<dt>This version:</dt>
+<dd><a href="http://labeling.link/docs/ls/reference/Aldgate/index.htm">http://labeling.link/docs/ls/reference/Alperton/index.htm</a><br/></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://labeling.link/docs/ls/reference/index.htm">http://labeling.link/docs/ls/reference/index.htm</a></dd>
+<dt>Previous version:</dt>
+<dd>none<br/></dd>
+<dt>Authors:</dt>
+<dd><a href="http://www.i3mainz.hs-mainz.de/de/personal/florian.thiery">Florian Thiery</a> - Mainz Centre for Digitality in the Humanities and Cultural Studies</dd>
+<br/>
+<hr/>
+
+<h2>Status of this Document</h2>
+<p>This document describes the RDF ontology used in the Labeling System.</p>
+</p>
+<br/>
+<hr/>
+
+<h2>Index of Contents</h2>
+<p>1. <a href="#introduction">Introduction</a></p>
+<p>2. <a href="#ontology">Ontology</a></p>
+<p>&nbsp;&nbsp;&nbsp;I. <a href="#Agent">Agent</a></p>
+<p>&nbsp;&nbsp;&nbsp;II. <a href="#Vocabulary">Vocabulary</a></p>
+<p>&nbsp;&nbsp;&nbsp;III. <a href="#Label">Label</a></p>
+<p>&nbsp;&nbsp;&nbsp;IV. <a href="#Revision">Revision</a></p>
+<p>3. <a href="#descriptions">Descriptions</a></p>
+<p>&nbsp;&nbsp;&nbsp;I. <a href="#MainClasses">MainClasses</a></p>
+<p>&nbsp;&nbsp;&nbsp;II. <a href="#ReleaseTypeClasses">ReleaseTypeClasses</a></p>
+<p>&nbsp;&nbsp;&nbsp;III. <a href="#DescribingProperties">DescribingProperties</a></p>
+<p>&nbsp;&nbsp;&nbsp;IV. <a href="#RevisionProperties">RevisionProperties</a></p>
+
+<br/>
+<hr/>
+
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>&nbsp;</p>
+<br/>
+<hr/>
+
+<a name="ontology"></a>
+<h2>Ontology</h2>
+
+<table>
+
+	<tr>
+      <th colspan="2">Labeling System Ontology</th>
+    </tr>
+    <tr>
+      <td width='150px'>Label: </td>
+      <td><em>Labeling System Ontology</em></td>
+    </tr>
+    <tr>
+      <td>Date: </td>
+      <td><em>03.11.2016</em></td>
+    </tr>
+	<tr>
+      <td>Description: </td>
+      <td><em>A RDF ontology describing the Labeling System.</em></td>
+    </tr>
+	<tr>
+      <td>Version: </td>
+      <td><em>Alperton Edition</em></td>
+    </tr>
+	<tr>
+      <td>Creator: </td>
+      <td><em>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</em></td>
+    </tr>
+    <tr>
+      <td>Licence: </td>
+      <td><em><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">http://creativecommons.org/licenses/by-sa/4.0/</a></em></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<a name="Prefixes"></a>
+<h3>Prefixes</h3>
+
+<table>
+    <tr>
+		<th width='150px'>prefix</th>
+		<th>uri</th>
+	</tr>
+	<tr>
+      <td width='150px'><code class="grey">ls</code></td>
+      <td><code class="grey">http://labeling.link/docs/ls/core#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">owl</code></td>
+      <td><code class="grey">http://www.w3.org/2002/07/owl#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">rdfs</code></td>
+      <td><code class="grey">http://www.w3.org/2000/01/rdf-schema#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">rdf</code></td>
+      <td><code class="grey">http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">dc</code></td>
+      <td><code class="grey">http://purl.org/dc/elements/1.1/</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">dct</code></td>
+      <td><code class="grey">http://purl.org/dc/terms/</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">xsd</code></td>
+      <td><code class="grey">http://www.w3.org/2001/XMLSchema#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">skos</code></td>
+      <td><code class="grey">http://www.w3.org/2004/02/skos/core#</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">foaf</code></td>
+      <td><code class="grey">http://xmlns.com/foaf/0.1/</code></td>
+    </tr>
+	<tr>
+      <td width='150px'><code class="grey">prov</code></td>
+      <td><code class="grey">http://www.w3.org/ns/prov#</code></td>
+    </tr>
+</table>
+
+<a name="Agent"></a>
+<h3>I. Agent</h3>
+
+<table>
+    <tr>
+      <th width='16%'>subject</th>
+      <th width='16%'>predicate</th>
+	  <th width='16%'>object</th>
+	  <th width='16%'>mendatory?</th>
+	  <th width='16%'>changeable?</th>
+	  <th width='16%'>note</th>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>a</code></td>
+	  <td width='16%'><code>owl:Class</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>rdfs:label</code></td>
+	  <td width='16%'><code>"Acting Agent"@en</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>owl:equivalentClass</code></td>
+	  <td width='16%'><code>foaf:Agent</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>dc:identifier</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>foaf:title</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>foaf:firstName</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>foaf:lastName</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>dcterms:publisher</code></td>
+	  <td width='16%'><code>rdfs:Resource</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i>orcid</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Agent</code></td>
+      <td width='16%'><code>dcterms:isPartOf</code></td>
+	  <td width='16%'><code>rdfs:Resource</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i>affiliation</i></code></td>
+    </tr>
+</table>
+
+<a name="Vocabulary"></a>
+<h3>II. Vocabulary</h3>
+
+<table>
+    <tr>
+      <th width='16%'>subject</th>
+      <th width='16%'>predicate</th>
+	  <th width='16%'>object</th>
+	  <th width='16%'>mendatory?</th>
+	  <th width='16%'>changeable?</th>
+	  <th width='16%'>note</th>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>a</code></td>
+	  <td width='16%'><code>owl:Class</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>rdfs:Label</code></td>
+	  <td width='16%'><code>"Controlled Vocabulary"@en</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>owl:equivalentClass</code></td>
+	  <td width='16%'><code>skos:ConceptScheme</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:identifier</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dct:creator</code></td>
+	  <td width='16%'><code>ls:Agent</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:creator</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:title</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:description</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:language</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:created</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dct:license</code></td>
+	  <td width='16%'><code>rdfs:Resource</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>dc:modified</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>ls:released</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Vocabulary</code></td>
+      <td width='16%'><code>ls:hasReleaseType</code></td>
+	  <td width='16%'><code>ls:ReleaseType</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+</table>
+
+<a name="Label"></a>
+<h3>III. Label</h3>
+
+<table>
+    <tr>
+      <th width='16%'>subject</th>
+      <th width='16%'>predicate</th>
+	  <th width='16%'>object</th>
+	  <th width='16%'>mendatory?</th>
+	  <th width='16%'>changeable?</th>
+	  <th width='16%'>note</th>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>a</code></td>
+	  <td width='16%'><code>owl:Class</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>rdfs:label</code></td>
+	  <td width='16%'><code>"Labeling System Label"@en</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>owl:equivalentClass</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dc:identifier</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dct:creator</code></td>
+	  <td width='16%'><code>ls:Agent</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dc:creator</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:inScheme</code></td>
+	  <td width='16%'><code>skos:ConceptScheme</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>ls:thumbnail</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dc:language</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:scopeNote</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:prefLabel</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:broader</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:narrower</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:related</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:broadMatch</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:narrowMatch</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:relatedMatch</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:closeMatch</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:exactMatch</code></td>
+	  <td width='16%'><code>rdfs:Resource</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>rdfs:seeAlso</code></td>
+	  <td width='16%'><code>skos:Concept</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="green"><b>CHANGEABLE</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dc:created</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>dc:modified</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Label</code></td>
+      <td width='16%'><code>skos:changeNote</code></td>
+	  <td width='16%'><code>ls:Revision</code></td>
+	  <td width='16%'><code class="green"><b>OPTIONAL</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+</table>
+
+<a name="Revision"></a>
+<h3>IV. Revision</h3>
+
+<table>
+    <tr>
+      <th width='16%'>subject</th>
+      <th width='16%'>predicate</th>
+	  <th width='16%'>object</th>
+	  <th width='16%'>mendatory?</th>
+	  <th width='16%'>changeable?</th>
+	  <th width='16%'>note</th>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>a</code></td>
+	  <td width='16%'><code>owl:Class</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>rdfs:label</code></td>
+	  <td width='16%'><code>"Labeling System Revision"@en</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>owl:equivalentClass</code></td>
+	  <td width='16%'><code>owl:Activity</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>dc:identifier</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>ls:action</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>ls:objectType</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>ls:valueBefore</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>ls:valueAfter</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i></i></code></td>
+    </tr>
+	<tr>
+      <td width='16%'><code>ls:Revision</code></td>
+      <td width='16%'><code>prov:startedAtTime</code></td>
+	  <td width='16%'><code>rdfs:Literal</code></td>
+	  <td width='16%'><code class="red"><b>MENDATORY</b></code></td>
+	  <td width='16%'><code class="red"><b>FIXED</b></code></td>
+	  <td width='16%'><code><i>date</i></code></td>
+    </tr>
+</table>
+
+<br/>
+<hr/>
+
+<a name="descriptions"></a>
+<h2>Descriptions</h2>
+
+<a name="MainClasses"></a>
+<h3>I. Main Classes</h3>
+<p>coming soon...</p>
+
+<a name="ReleaseTypeClasses"></a>
+<h3>II. Release Type Classes</h3>
+<p>coming soon...</p>
+
+<a name="DescribingProperties"></a>
+<h3>III. Describing Properties</h3>
+<p>coming soon...</p>
+
+<a name="RevisionProperties"></a>
+<h3>IV. Revision Properties</h3>
+<p>coming soon...</p>
+
+<br/>
+<hr/>
+<p>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+	&nbsp;&nbsp;This work is licensed under a 
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</p>
+
+</body>
+</html>
