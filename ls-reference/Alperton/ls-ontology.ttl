@@ -29,8 +29,8 @@ ls:Agent a owl:Class;
 	foaf:title rdfs:Literal; 			#OPTIONAL CHANGEABLE [title] (e.g. Dr., Prof.)
 	foaf:firstName rdfs:Literal; 			#MENDATORY CHANGEABLE [firstName]
 	foaf:lastName rdfs:Literal; 			#MENDATORY CHANGEABLE  [lastName]
-	dct:publisher rdfs:Resource; 		#MENDATORY CHANGEABLE [orcid] (ORCID)
-	dct:isPartOf rdfs:Resource. 		#MENDATORY CHANGEABLE [affiliation] (affiliation)
+	dct:publisher rdfs:Resource; 			#MENDATORY CHANGEABLE [orcid] (ORCID)
+	dct:isPartOf rdfs:Resource. 			#MENDATORY CHANGEABLE [affiliation] (affiliation)
 
 ls:Vocabulary a owl:Class;
 	rdfs:label "Controlled Vocabulary"@en;		
