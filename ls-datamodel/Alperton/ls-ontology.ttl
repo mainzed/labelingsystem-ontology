@@ -1,4 +1,4 @@
-@prefix ls-reference: <http://labeling.link/docs/ls/reference#>.
+@prefix ls-datamodel: <http://labeling.link/docs/ls/datamodel#>.
 @prefix ls: <http://labeling.link/docs/ls/core#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
@@ -12,17 +12,17 @@
 
 # Ontology
 
-ls-reference: a owl:Ontology;
-	rdfs:label "Labeling System Ontology"@en;
-	dct:created "2016-11-03"^^xsd:date;
+ls-datamodel: a owl:Ontology;
+	rdfs:label "Labeling System Datamodel"@en;
+	dct:created "2016-11-23"^^xsd:date;
 	dct:description "A RDF ontology describing the Labeling System"@en;
 	owl:versionInfo "Alperton Edition";
 	dct:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
 	dct:licence <http://creativecommons.org/licenses/by/4.0/>;
-	rdfs:seeAlso <http://labeling.link/docs/ls/reference/>.
+	rdfs:seeAlso <http://labeling.link/docs/ls/datamodel/>.
 
 ls:Agent a owl:Class;
-	rdfs:label "Acting Agent"@en; 			
+	rdfs:label "Acting Agent"@en;
 	owl:equivalentClass foaf:Agent;			#MENDATORY FIXED
 	dc:identifier rdfs:Literal; 			#MENDATORY FIXED [id]
 	# textual description
@@ -33,7 +33,7 @@ ls:Agent a owl:Class;
 	dct:isPartOf rdfs:Resource. 			#MENDATORY CHANGEABLE [affiliation] (affiliation)
 
 ls:Vocabulary a owl:Class;
-	rdfs:label "Controlled Vocabulary"@en;		
+	rdfs:label "Controlled Vocabulary"@en;
 	owl:equivalentClass skos:ConceptScheme;		#MENDATORY FIXED
 	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
 	# creator
@@ -50,9 +50,9 @@ ls:Vocabulary a owl:Class;
 	dc:modified rdfs:Literal;			#OPTIONAL FIXED
 	ls:released rdfs:Literal;			#OPTIONAL FIXED [released]
 	ls:hasReleaseType ls:ReleaseType.		#MENDATORY CHANGEABLE [releaseType]
-	
+
 ls:Label a owl:Class;
-	rdfs:label "Labeling System Label"@en;		
+	rdfs:label "Labeling System Label"@en;
 	owl:equivalentClass skos:Concept;		#MENDATORY FIXED
 	dc:identifier rdfs:Literal;			#MENDATORY FIXED [id]
 	# creator
@@ -80,7 +80,7 @@ ls:Label a owl:Class;
 	# status and changes
 	dc:modified rdfs:Literal;			#OPTIONAL FIXED
 	skos:changeNote ls:Revision.			#OPTIONAL
-	
+
 ls:Revision a owl:Class;
 	rdfs:label "Labeling System Revision"@en;
 	owl:equivalentClass prov:Activity;		#MENDATORY FIXED
