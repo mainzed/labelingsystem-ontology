@@ -3,6 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -12,10 +13,11 @@
 
 ls: a owl:Ontology;
   dcterms:title "Labeling System Vocabulary"@en;
-  dcterms:created "2016-11-23"^^xsd:date;
+  dcterms:created "2017-02-24"^^xsd:date;
   dcterms:description "An RDF vocabulary for describing the basic structure and content of the Labeling System."@en;
   owl:versionInfo "Aldgate Edition";
-  dcterms:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
+  dc:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
+  dcterms:creator "http://orcid.org/0000-0002-3246-3531";
   dcterms:licence <http://creativecommons.org/licenses/by/4.0/>;
   rdfs:seeAlso <http://labeling.link/docs/ls/core/>.
 
@@ -117,7 +119,7 @@ ls:valueBefore a owl:ObjectProperty, rdf:Property;
 
 ls:valueAfter a owl:ObjectProperty, rdf:Property;
 	skos:definition <http://labeling.link/docs/ls/datamodel#RevisionProperties>;
-	rdfs:label "had value after"@en;
+	rdfs:label "has value after"@en;
 	rdfs:domain ls:Revision;
 	rdfs:range rdfs:Literal;
 	rdfs:isDefinedBy <http://labeling.link/docs/ls/core/>.

@@ -2,15 +2,17 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
          xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
   <owl:Ontology rdf:about="http://labeling.link/docs/ls/core#">
     <dc:title xml:lang="en">Labeling System Vocabulary</dc:title>
-    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-11-23</dc:created>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-02-24</dc:created>
     <dc:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of the Labeling System.</dc:description>
     <owl:versionInfo>Aldgate Edition</owl:versionInfo>
-    <dc:creator>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</dc:creator>
+    <dc11:creator>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</dc11:creator>
+    <dc:creator>http://orcid.org/0000-0002-3246-3531</dc:creator>
     <dc:licence rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
     <rdfs:seeAlso rdf:resource="http://labeling.link/docs/ls/core/"/>
   </owl:Ontology>
@@ -128,7 +130,7 @@
   <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#valueAfter">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#RevisionProperties"/>
-    <rdfs:label xml:lang="en">had value after</rdfs:label>
+    <rdfs:label xml:lang="en">has value after</rdfs:label>
     <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Revision"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
