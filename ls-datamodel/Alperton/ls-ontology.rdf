@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:ns0="http://labeling.link/docs/ls/core#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:prov="http://www.w3.org/ns/prov#">
+
+  <owl:Ontology rdf:about="http://labeling.link/docs/ls/datamodel#">
+    <rdfs:label xml:lang="en">Labeling System Datamodel</rdfs:label>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-02-24</dc:created>
+    <dc:description xml:lang="en">A RDF ontology describing the Labeling System</dc:description>
+    <owl:versionInfo>Alperton Edition</owl:versionInfo>
+    <dc11:creator>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</dc11:creator>
+    <dc:creator rdf:resource="http://orcid.org/0000-0002-3246-3531"/>
+    <dc:licence rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <rdfs:seeAlso rdf:resource="http://labeling.link/docs/ls/datamodel/"/>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Agent">
+    <rdfs:label xml:lang="en">Acting Agent</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <dc11:identifier rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <foaf:title rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <foaf:firstName rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <foaf:lastName rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc:publisher rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <dc:isPartOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Vocabulary">
+    <rdfs:label xml:lang="en">Controlled Vocabulary</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dc11:identifier rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc:creator rdf:resource="http://labeling.link/docs/ls/core#Agent"/>
+    <dc11:creator rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:title rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:description rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:language rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:created rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc:license rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <dc11:modified rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <ns0:released rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <ns0:hasReleaseType rdf:resource="http://labeling.link/docs/ls/core#ReleaseType"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Label">
+    <rdfs:label xml:lang="en">Labeling System Label</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dc11:identifier rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc:creator rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <dc11:creator rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:inScheme rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <ns0:thumbnail rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:language rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:scopeNote rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:prefLabel rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:broader rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrower rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:related rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broadMatch rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:narrowMatch rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:relatedMatch rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:exactMatch rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <dc11:created rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <dc11:modified rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <skos:changeNote>
+      <owl:Class rdf:about="http://labeling.link/docs/ls/core#Revision">
+        <rdfs:label xml:lang="en">Labeling System Revision</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <dc11:identifier rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns0:action rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns0:objectType rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns0:valueBefore rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns0:valueAfter rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <prov:startedAtTime rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+      </owl:Class>
+    </skos:changeNote>
+
+  </owl:Class>
+
+</rdf:RDF>

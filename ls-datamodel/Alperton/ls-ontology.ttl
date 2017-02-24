@@ -14,11 +14,11 @@
 
 ls-datamodel: a owl:Ontology;
 	rdfs:label "Labeling System Datamodel"@en;
-	dct:created "2016-11-23"^^xsd:date;
+	dct:created "2017-02-24"^^xsd:date;
 	dct:description "A RDF ontology describing the Labeling System"@en;
 	owl:versionInfo "Alperton Edition";
 	dc:creator "Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies";
-  dct:creator "http://orcid.org/0000-0002-3246-3531";
+  dct:creator <http://orcid.org/0000-0002-3246-3531>;
 	dct:licence <http://creativecommons.org/licenses/by/4.0/>;
 	rdfs:seeAlso <http://labeling.link/docs/ls/datamodel/>.
 

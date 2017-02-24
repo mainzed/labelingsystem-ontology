@@ -12,7 +12,7 @@
     <dc:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of the Labeling System.</dc:description>
     <owl:versionInfo>Aldgate Edition</owl:versionInfo>
     <dc11:creator>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</dc11:creator>
-    <dc:creator>http://orcid.org/0000-0002-3246-3531</dc:creator>
+    <dc:creator rdf:resource="http://orcid.org/0000-0002-3246-3531"/>
     <dc:licence rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
     <rdfs:seeAlso rdf:resource="http://labeling.link/docs/ls/core/"/>
   </owl:Ontology>
