@@ -20,4 +20,4 @@ The Labeling System Ontology consists of the core vocabulary and the datamodel.
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-**CC BY (Florian Thiery M.Sc.)[http://orcid.org/0000-0002-3246-3531], mainzed**
+**CC BY [Florian Thiery M.Sc.](http://orcid.org/0000-0002-3246-3531), mainzed**
