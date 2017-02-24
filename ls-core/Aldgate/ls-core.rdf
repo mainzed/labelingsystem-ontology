@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <owl:Ontology rdf:about="http://labeling.link/docs/ls/core#">
+    <dc:title xml:lang="en">Labeling System Vocabulary</dc:title>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-11-23</dc:created>
+    <dc:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of the Labeling System.</dc:description>
+    <owl:versionInfo>Aldgate Edition</owl:versionInfo>
+    <dc:creator>Florian Thiery M.Sc., Mainz Centre for Digitality in the Humanities and Cultural Studies</dc:creator>
+    <dc:licence rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <rdfs:seeAlso rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#MainClasses"/>
+    <rdfs:label xml:lang="en">A Labeling System Agent</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Label">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#MainClasses"/>
+    <rdfs:label xml:lang="en">A Labeling System Label</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Revision">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#MainClasses"/>
+    <rdfs:label xml:lang="en">A Labeling System Revision</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Vocabulary">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#MainClasses"/>
+    <rdfs:label xml:lang="en">A Labeling System Vocabulary</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#ReleaseType">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#ReleaseTypeClasses"/>
+    <rdfs:label xml:lang="en">release type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Public">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://labeling.link/docs/ls/core#ReleaseType"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#ReleaseTypeClasses"/>
+    <rdfs:label xml:lang="en">public item</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://labeling.link/docs/ls/core#Draft">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://labeling.link/docs/ls/core#ReleaseType"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#ReleaseTypeClasses"/>
+    <rdfs:label xml:lang="en">item in draft mode</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#hasReleaseType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#DescribingProperties"/>
+    <rdfs:label xml:lang="en">has release type</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Vocabulary"/>
+    <rdfs:range rdf:resource="http://labeling.link/docs/ls/core#ReleaseType"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#released">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#DescribingProperties"/>
+    <rdfs:label xml:lang="en">was released at</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Vocabulary"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#thumbnail">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#DescribingProperties"/>
+    <rdfs:label xml:lang="en">has a preferred skos:prefLabel</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Label"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#action">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#RevisionProperties"/>
+    <rdfs:label xml:lang="en">has action</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Revision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#objectType">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#RevisionProperties"/>
+    <rdfs:label xml:lang="en">has object type</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Revision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#valueBefore">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#RevisionProperties"/>
+    <rdfs:label xml:lang="en">had value before</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Revision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://labeling.link/docs/ls/core#valueAfter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <skos:definition rdf:resource="http://labeling.link/docs/ls/datamodel#RevisionProperties"/>
+    <rdfs:label xml:lang="en">had value after</rdfs:label>
+    <rdfs:domain rdf:resource="http://labeling.link/docs/ls/core#Revision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.link/docs/ls/core/"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>
