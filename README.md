@@ -7,6 +7,7 @@ The Labeling System Ontology consists of the core vocabulary and the datamodel.
 ### Vocabulary
 
 * Aldgate Edition (24/02/2017): [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.322228.svg)](https://doi.org/10.5281/zenodo.322228)
+* Aldgate Edition (24/02/2017): [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.322265.svg)](https://doi.org/10.5281/zenodo.322265)
 
 ### Datamodel
 
